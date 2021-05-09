@@ -23,3 +23,4 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.on('/').redirect('rooms.create')
 Route.resource('rooms', 'RoomsController')
 Route.resource('rooms.questions', 'QuestionsController')
+Route.resource('rooms.questions.vote', 'VotesController').only(['store'])

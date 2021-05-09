@@ -8,7 +8,15 @@
   <ul>
     @each(question in room.questions)
       @set('hasVoted', question.votes.filter((vote) => vote.ip === request.ip()).length > 0)
-      <li>[{{ question.votes.length }}] {{ question.text }} <button>{{ hasVoted ? '-1' : '+1' }}</button> </li>
+      <li>
+        <span>[{{ question.votes.length }}]</span>
+        <span>{{ question.text }}</span>
+        <form action="{{ route('VotesController.store', { room_id: room.id, question_id: question.id }) }}" method="POST">
+          <button type="submit">
+            {{ hasVoted ? '-1' : '+1' }}
+          </button>
+        </form>
+      </li>
     @endeach
   </ul>
 
