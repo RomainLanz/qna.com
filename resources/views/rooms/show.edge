@@ -29,6 +29,8 @@
           <span class="question__time">{{ question.createdAt.toRelative() }}</span>
         </article>
       </div>
+    @else
+      <p class="no-question">There is no question</p>
     @endeach
   </div>
 

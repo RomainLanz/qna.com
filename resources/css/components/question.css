@@ -59,6 +59,11 @@
   font-size: var(--text-lg);
 }
 
+.no-question {
+  font-size: var(--text-2xl);
+  color: var(--grey-400);
+}
+
 .question__time {
   color: var(--grey-400);
   font-size: var(--text-base);
