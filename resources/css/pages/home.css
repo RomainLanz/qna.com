@@ -1,0 +1,19 @@
+.create-room {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.create-room input {
+  font-size: var(--text-6xl);
+  border-radius: var(--rounded);
+  border: 1px solid var(--grey-200);
+  box-shadow: var(--shadow-md);
+  padding: var(--size-4) var(--size-8);
+  text-align: center;
+
+  &::placeholder {
+    color: var(--grey-300);
+  }
+}

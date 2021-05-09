@@ -1,0 +1,31 @@
+.header {
+  background-color: var(--white);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: var(--size-4) var(--size-8);
+  justify-content: space-between;
+}
+
+.header__title {
+  font-size: var(--text-7xl);
+}
+
+.header__action {
+  display: flex;
+  justify-content: center;
+}
+
+.header__action a {
+  padding: var(--size-4) var(--size-8);
+  background-color: var(--adonis-500);
+  border-radius: var(--rounded-md);
+  color: var(--white);
+  text-decoration: none;
+  font-size: var(--text-xl);
+  transition: background-color var(--fast) ease-in;
+
+  &:hover {
+    background-color: var(--adonis-600);
+  }
+}

@@ -1,0 +1,40 @@
+.room__title {
+  font-size: var(--text-7xl);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--size-8);
+  padding-bottom: var(--size-8);
+  border-bottom: 2px dashed var(--grey-300);
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-6);
+
+  label {
+    font-size: var(--text-2xl);
+  }
+
+  textarea {
+    border-radius: var(--rounded-md);
+    font-size: var(--text-2xl);
+    box-shadow: var(--shadow-md);
+    padding: var(--size-4) var(--size-8);
+    border: 1px solid var(--grey-200);
+  }
+
+  button {
+    padding: var(--size-4) var(--size-8);
+    background-color: var(--adonis-500);
+    border-radius: var(--rounded-md);
+    border: 0;
+    color: var(--white);
+    text-decoration: none;
+    font-size: var(--text-xl);
+    transition: background-color var(--fast) ease-in;
+
+    &:hover {
+      background-color: var(--adonis-600);
+    }
+  }
+}

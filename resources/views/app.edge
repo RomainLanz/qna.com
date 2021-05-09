@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Q&A</title>
+
+  @entryPointScripts('app')
+
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+  <link href="https://unpkg.com/@csstools/normalize.css/evergreen.css" rel="stylesheet" />
+  @entryPointStyles('app')
 </head>
 <body>
-  @!section('page')
+  @include('layouts/header')
+
+  <main>
+    @!section('page')
+  </main>
 </body>
 </html>

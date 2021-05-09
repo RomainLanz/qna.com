@@ -1,0 +1,112 @@
+:root {
+  /** Colors */
+  --white: white;
+
+  --grey-1000: hsl(210, 24%, 16%);
+  --grey-900: hsl(209, 20%, 25%);
+  --grey-800: hsl(209, 18%, 30%);
+  --grey-700: hsl(209, 14%, 37%);
+  --grey-600: hsl(211, 12%, 43%);
+  --grey-500: hsl(211, 10%, 53%);
+  --grey-400: hsl(211, 13%, 65%);
+  --grey-300: hsl(210, 16%, 82%);
+  --grey-200: hsl(214, 15%, 91%);
+  --grey-100: hsl(216, 33%, 97%);
+
+  --adonis-900: hsl(248, 57%, 13%);
+  --adonis-800: hsl(247, 57%, 25%);
+  --adonis-700: hsl(247, 56%, 38%);
+  --adonis-600: hsl(247, 59%, 51%);
+  --adonis-500: hsl(247, 100%, 64%);
+  --adonis-400: hsl(247, 100%, 71%);
+  --adonis-300: hsl(247, 100%, 78%);
+  --adonis-200: hsl(247, 100%, 85%);
+  --adonis-100: hsl(248, 100%, 93%);
+
+  --green-900: hsl(134, 32%, 13%);
+  --green-800: hsl(133, 31%, 26%);
+  --green-700: hsl(133, 32%, 38%);
+  --green-600: hsl(132, 33%, 51%);
+  --green-500: hsl(133, 56%, 64%);
+  --green-400: hsl(132, 56%, 71%);
+  --green-300: hsl(133, 56%, 78%);
+  --green-200: hsl(133, 56%, 86%);
+  --green-100: hsl(134, 57%, 93%);
+
+  --red-900: hsl(0, 50%, 12%);
+  --red-800: hsl(0, 50%, 23%);
+  --red-700: hsl(0, 51%, 35%);
+  --red-600: hsl(0, 50%, 46%);
+  --red-500: hsl(0, 70%, 58%);
+  --red-400: hsl(0, 70%, 66%);
+  --red-300: hsl(0, 70%, 75%);
+  --red-200: hsl(0, 69%, 83%);
+  --red-100: hsl(0, 71%, 92%);
+
+  --purple-1000: hsl(276, 91%, 23%);
+  --purple-900: hsl(274, 87%, 31%);
+  --purple-800: hsl(274, 87%, 37%);
+  --purple-700: hsl(274, 87%, 43%);
+  --purple-600: hsl(273, 80%, 49%);
+  --purple-500: hsl(268, 82%, 60%);
+  --purple-400: hsl(264, 96%, 70%);
+  --purple-300: hsl(262, 100%, 78%);
+  --purple-200: hsl(262, 100%, 88%);
+  --purple-100: hsl(262, 90%, 96%);
+
+  /** Border Radius */
+  --rounded: 0.25rem;
+  --rounded-md: 0.5rem;
+
+  /** Text Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.5rem;
+  --text-7xl: 4rem;
+  --text-8xl: 6rem;
+
+  /** Font Weight */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /** Sizes */
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-6: 1.5rem;
+  --size-8: 2rem;
+  --size-10: 2.5rem;
+  --size-12: 3rem;
+  --size-14: 3.5rem;
+  --size-16: 4rem;
+  --size-20: 5rem;
+  --size-24: 6rem;
+  --size-32: 8rem;
+  --size-40: 10rem;
+  --size-48: 12rem;
+  --size-56: 14rem;
+
+  /** Transitions */
+  --fastest: 50ms;
+  --faster: 100ms;
+  --fast: 150ms;
+  --medium: 200ms;
+  --slow: 300ms;
+
+  /** Shadows */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /** Components */
+  --header-height: 110px;
+}
