@@ -1,0 +1,22 @@
+@layout('app')
+
+@section('page')
+  <h1>{{ room.name }}</h1>
+
+  <hr>
+
+  <ul>
+    @each(question in room.questions)
+      @set('hasVoted', question.votes.filter((vote) => vote.ip === request.ip()).length > 0)
+      <li>[{{ question.votes.length }}] {{ question.text }} <button>{{ hasVoted ? '-1' : '+1' }}</button> </li>
+    @endeach
+  </ul>
+
+  <hr />
+
+  <form action="{{ route('QuestionsController.store', { room_id: room.id }) }}" method="POST">
+    <label for="question">Question</label>
+    <input id="question" name="question" type="text">
+    <button type="submit">Create</button>
+  </form>
+@endsection

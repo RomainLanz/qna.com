@@ -20,6 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
+Route.on('/').redirect('rooms.create')
+Route.resource('rooms', 'RoomsController')
+Route.resource('rooms.questions', 'QuestionsController')
