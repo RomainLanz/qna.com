@@ -17,6 +17,9 @@ export default class Question extends BaseModel {
   public text: string
 
   @column()
+  public status: 'answered' | 'pinned' | 'deleted'
+
+  @column()
   public roomId: string
 
   @belongsTo(() => Room)

@@ -1,0 +1,46 @@
+@layout('app')
+
+@section('page')
+  <h1 class="room__title">{{ room.name }}</h1>
+
+  <div class="question-list">
+    @each(question in room.questions)
+      @set('hasVoted', question.votes.filter((vote) => vote.ip === request.ip()).length > 0)
+
+      <div class="question">
+        <span class="question__total-vote">
+          {{ question.votes.length }} {{ question.status }}
+        </span>
+
+        <article class="question__text">
+          {{ question.text }}
+
+          <div class="question__time">
+            <span>{{ question.createdAt.toRelative() }}</span>
+
+            <span>&middot;</span>
+
+            <form action="{{ route('Admin/QuestionsController.update', { room_id: room.id, id: question.id }) }}?secret={{ request.qs().secret }}&_method=PUT" method="POST">
+              <input name="status" type="hidden" value="answered">
+              <button type="submit">Mark as Answered</button>
+            </form>
+
+            <form action="{{ route('Admin/QuestionsController.update', { room_id: room.id, id: question.id }) }}?secret={{ request.qs().secret }}&_method=PUT" method="POST">
+              <input name="status" type="hidden" value="pinned">
+              <button type="submit">Pin</button>
+            </form>
+
+            <a href="{{ route('Admin/QuestionsController.edit', { room_id: room.id, id: question.id }) }}?secret={{ request.qs().secret }}">Edit</a>
+
+            <form action="{{ route('Admin/QuestionsController.update', { room_id: room.id, id: question.id }) }}?secret={{ request.qs().secret }}&_method=PUT" method="POST">
+              <input name="status" type="hidden" value="deleted">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        </article>
+      </div>
+    @else
+      <p class="no-question">There is no question</p>
+    @endeach
+  </div>
+@endsection

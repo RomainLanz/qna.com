@@ -7,7 +7,7 @@
 
 .create-room input {
   font-size: var(--text-6xl);
-  border-radius: var(--rounded);
+  border-radius: var(--rounded-md);
   border: 1px solid var(--grey-200);
   box-shadow: var(--shadow-md);
   padding: var(--size-4) var(--size-8);

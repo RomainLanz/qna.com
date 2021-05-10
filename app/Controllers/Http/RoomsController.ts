@@ -12,7 +12,11 @@ export default class RoomsController {
 
     const room = await Room.create(payload)
 
-    return response.redirect().toRoute('rooms.show', { id: room.id })
+    const secrets = JSON.parse(request.cookie('secrets', '[]'))
+    secrets.push(room.secret)
+    response.cookie('secrets', secrets)
+
+    return response.redirect().toRoute('admin.rooms.show', { id: room.id })
   }
 
   public async show({ params, view }: HttpContextContract) {

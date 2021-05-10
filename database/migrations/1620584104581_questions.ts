@@ -8,6 +8,7 @@ export default class Questions extends BaseSchema {
       table.uuid('id').primary().defaultTo(this.db.rawQuery('uuid_generate_v4()').knexQuery)
       table.timestamps(true)
       table.string('text')
+      table.enum('status', ['answered', 'pinned', 'deleted'])
       table.uuid('room_id')
 
       table.foreign('room_id').references('id').inTable('rooms').onDelete('CASCADE')

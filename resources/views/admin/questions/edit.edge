@@ -1,0 +1,11 @@
+@layout('app')
+
+@section('page')
+<form class="question-form" action="{{ route('Admin/QuestionsController.updateText', { room_id: question.room.id, id: question.id }) }}?secret={{ request.qs().secret }}&_method=PUT" method="POST">
+  <label for="question">Edition of the question</label>
+  <textarea id="question" name="text">{{ question.text }}</textarea>
+  <div>
+    <button type="submit">Edit</button>
+  </div>
+</form>
+@endsection
