@@ -39,6 +39,7 @@
   svg {
     height: 30px;
     width: 30px;
+    transition: fill var(--fast) ease-in;
   }
 
   &:hover {
