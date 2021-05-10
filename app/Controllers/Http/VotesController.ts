@@ -14,12 +14,17 @@ export default class VotesController {
 
     if (vote.length === 1) {
       await vote[0].delete()
-
-      return response.redirect().back()
+    } else {
+      await question.related('votes').create({ ip: request.ip() })
     }
 
-    await question.related('votes').create({ ip: request.ip() })
-
-    return response.redirect().back()
+    switch (request.accepts(['html', 'json'])) {
+      case 'json':
+        await question.load('votes')
+        return question.votes.length
+      case 'html':
+      default:
+        return response.redirect().back()
+    }
   }
 }

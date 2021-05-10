@@ -46,7 +46,9 @@ Encore.setPublicPath('/assets')
 |
 */
 Encore.addEntry('app', './resources/js/app.ts')
-Encore.enableTypeScriptLoader()
+Encore.enableTypeScriptLoader((config) => {
+  config.configFile = 'tsconfig.front.json'
+})
 
 /*
 |--------------------------------------------------------------------------
