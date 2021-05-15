@@ -1,6 +1,3 @@
-import '../css/app.css'
-import 'alpinejs'
-
 window.Adonis = {}
 
 window.Adonis.QuestionPage = () => ({
@@ -40,6 +37,6 @@ window.Adonis.LikeButton = () => ({
     }).then((r) => r.text())
 
     this.$refs.voteCount.innerText = voteCount
-    this.$el.dataset.voted = this.$el.dataset.voted !== 'true'
+    this.$el.dataset.voted = !JSON.parse(this.$el.dataset.voted)
   },
 })

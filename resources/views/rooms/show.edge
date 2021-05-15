@@ -2,21 +2,21 @@
 
 @section('page')
 <div x-data="Adonis.QuestionPage()">
-  <h1 class="room__title">{{ room.name }}</h1>
+  <h1 class="font-medium text-7xl mb-8 pb-8 border-b-2 border-dashed border-gray-300">{{ room.name }}</h1>
 
-  <div x-ref="questionList" class="question-list">
+  <div x-ref="questionList" class="flex flex-col gap-8 mb-8 pb-8 border-b-2 border-dashed border-gray-300">
     @each(question in room.questions)
       @include('partials/question')
     @else
-      <p x-show="!hasQuestion" class="no-question">There is no question</p>
+      <p x-show="!hasQuestion" class="text-2xl text-gray-400">There is no question</p>
     @endeach
   </div>
 
-  <form x-ref="form" @submit.prevent="saveQuestion" class="question-form" action="{{ route('QuestionsController.store', { room_id: room.id }) }}" method="POST">
-    <label for="question">Your Question</label>
-    <textarea x-model="question" id="question" name="question"></textarea>
+  <form x-ref="form" @submit.prevent="saveQuestion" class="flex flex-col gap-6" action="{{ route('QuestionsController.store', { room_id: room.id }) }}" method="POST">
+    <label class="text-2xl" for="question">Your Question</label>
+    <textarea x-model="question" id="question" name="question" class="rounded-md text-2xl shadow-md border border-gray-200 py-4 px-8"></textarea>
     <div>
-      <button type="submit">Create</button>
+      <button class="bg-indigo-500 rounded-md text-white text-xl py-4 px-8" type="submit">Create</button>
     </div>
   </form>
 </div>

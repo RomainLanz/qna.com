@@ -1,9 +1,9 @@
 @layout('app')
 
 @section('page')
-  <div class="create-room">
+  <div class="flex items-center justify-center h-full">
     <form action="{{ route('RoomsController.store') }}" method="POST">
-      <input id="name" name="name" type="text" placeholder="Room Name">
+      <input class="shadow-md border border-gray-200 focus:ring ring-indigo-500 text-6xl px-8 py-4 text-center rounded-md" id="name" name="name" type="text" placeholder="Room Name">
     </form>
   </div>
 @endsection

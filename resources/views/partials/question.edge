@@ -1,24 +1,24 @@
 @set('hasVoted', question.votes.filter((vote) => vote.ip === request.ip()).length > 0)
 
-<div class="question">
+<div class="flex gap-4">
   <div x-data="Adonis.LikeButton()" data-voted="{{ hasVoted }}">
-    <form x-ref="form" @submit.prevent="like" class="question__vote" action="{{ route('VotesController.store', { room_id: room.id, question_id: question.id }) }}" method="POST">
-      <button type="submit">
-        <svg stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <form x-ref="form" @submit.prevent="like" action="{{ route('VotesController.store', { room_id: room.id, question_id: question.id }) }}" method="POST">
+      <button class="outline-none focus:ring ring-red-500 flex items-center justify-center text-red-500 border-0 rounded-full hover:bg-red-500 hover:bg-opacity-10" style="height: 50px; width: 50px" type="submit">
+        <svg style="height: 30px; width: 30px" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
         </svg>
       </button>
     </form>
 
-    <span x-ref="voteCount" class="question__total-vote">
+    <span x-ref="voteCount" class="flex items-center justify-center mt-2 text-gray-500 text-lg">
       {{ question.votes.length }}
     </span>
   </div>
 
 
-  <article class="question__text">
+  <article class="text-2xl bg-white rounded-md shadow-md border border-gray-200 py-4 px-8 flex gap-4 flex-col flex-grow">
     {{ question.text }}
 
-    <span class="question__time">{{ question.createdAt.toRelative() }}</span>
+    <span class="text-sm text-gray-400">{{ question.createdAt.toRelative() }}</span>
   </article>
 </div>

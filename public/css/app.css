@@ -1,0 +1,7 @@
+div[data-voted='true'] svg {
+  fill: currentColor;
+}
+
+div[data-voted='false'] svg {
+  fill: transparent;
+}
