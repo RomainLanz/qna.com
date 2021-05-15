@@ -45,10 +45,7 @@ Encore.setPublicPath('/assets')
 | entrypoints.
 |
 */
-Encore.addEntry('app', './resources/js/app.ts')
-Encore.enableTypeScriptLoader((config) => {
-  config.configFile = 'tsconfig.front.json'
-})
+Encore.addEntry('app', './resources/js/app.js')
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +74,7 @@ Encore.enableTypeScriptLoader((config) => {
 | https://webpack.js.org/plugins/split-chunks-plugin/
 |
 */
-// Encore.splitEntryChunks()
+Encore.splitEntryChunks()
 
 /*
 |--------------------------------------------------------------------------
@@ -189,6 +186,10 @@ Encore.enablePostCssLoader()
 //   runtimeCompilerBuild: false,
 //   useJsx: false
 // })
+
+Encore.configureBabel((config) => {
+  config.presets = []
+})
 
 /*
 |--------------------------------------------------------------------------

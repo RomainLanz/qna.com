@@ -6,7 +6,6 @@
   "exclude": [
     "node_modules",
     "build",
-    "resources/js"
   ],
   "compilerOptions": {
     "outDir": "build",

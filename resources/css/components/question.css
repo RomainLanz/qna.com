@@ -25,6 +25,14 @@
   border: 1px solid var(--grey-200);
 }
 
+div[data-voted='true'] svg {
+  fill: currentColor;
+}
+
+div[data-voted='false'] svg {
+  fill: transparent;
+}
+
 .question__vote button {
   align-items: center;
   display: flex;

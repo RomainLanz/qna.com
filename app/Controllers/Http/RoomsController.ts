@@ -12,7 +12,7 @@ export default class RoomsController {
 
     const room = await Room.create(payload)
 
-    const secrets = JSON.parse(request.cookie('secrets', '[]'))
+    const secrets = request.cookie('secrets', [])
     secrets.push(room.secret)
     response.cookie('secrets', secrets)
 
